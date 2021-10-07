@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FizzBuzz 2</title>
+    <style>
+        * {
+            text-align: center;
+        }
+
+        #number {
+            border: 1px solid rgb(173, 172, 172);
+            margin: 10px 0px;
+            padding: 5px 10px;
+        }
+
+        .btn {
+            padding: 10px 15px;
+            margin: 5px 0px;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Welcome To Website Fizzbuzz 2</h1>
+    <label for="number">Type a number: <br>
+        <input type="text" id="number"></label>
+    <br>
+    <input class="btn" type="button" value="Click here!" onclick="fizzbuzz()">
+    <section id="main"></section>
+    <script>
+        const main = document.getElementById('main')
+        const fizzbuzz = () => {
+            const number = document.getElementById('number')
+            const input = number.value
+            const output = document.createElement('p')
+            if (input === '0') {
+                output.innerHTML = 'invalid input'
+            } else {
+                if (input % 3 === 0) {
+                    output.innerHTML = 'FizzBuzz!'
+                } else if (input % 5 === 0) {
+                    output.innerHTML = 'Fizz!'
+                } else if (input % 2 === 0) {
+                    output.innerHTML = 'Buzz!'
+                } else {
+                    output.innerHTML = input
+                }
+            }
+            main.append(output)
+            number.value = ''
+        }
+    </script>
+</body>
+
+</html>
